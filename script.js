@@ -2,11 +2,40 @@ let humanScore = 0;
 let computerScore = 0;
 
 function playRound(humanChoice, computerChoice) {
-  let isTie = humanChoice === computerChoice;
-
-  if (isTie) {
-    console.log(`It's a tie! You picked ${humanChoice}, the computer picked ${computerChoice} as well.`);
+  if (humanChoice === computerChoice) {
+    console.log(
+      `It's a tie! ${humanChoice} VS ${computerChoice}`
+    );
     return;
+  }
+
+  const pairs = [
+    {
+      pair: ["rock", "scissors"],
+      winner: "rock",
+    },
+    {
+      pair: ["scissors", "paper"],
+      winner: "scissors",
+    },
+    {
+      pair: ["paper", "rock"],
+      winner: "paper",
+    },
+  ];
+
+  const match = pairs.find((item) => {
+    return item.pair.includes(humanChoice) && item.pair.includes(computerChoice);
+  });
+
+  if (match.winner === humanChoice) {
+    humanScore ++;
+    console.log(`You win! ${humanChoice} beats ${computerChoice}`);
+    console.log(`Your score: ${humanScore}. Computer's score: ${computerScore}`);
+  } else {
+    computerScore ++;
+    console.log(`You lose! ${computerChoice} beats ${humanChoice}`);
+    console.log(`Your score: ${humanScore}. Computer's score: ${computerScore}`);
   }
 }
 
@@ -26,4 +55,3 @@ function getComputerChoice() {
 
 playRound(humanSelection, computerSelection);
 
-console.log(humanSelection);
