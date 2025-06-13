@@ -1,17 +1,7 @@
 function playGame() {
   let humanScore = 0;
   let computerScore = 0;
-
-  function playRound() {
-    const humanChoice = getHumanChoice();
-    const computerChoice = getComputerChoice();
-
-    if (humanChoice === computerChoice) {
-      console.log(`It's a tie! ${humanChoice} VS ${computerChoice}`);
-      return;
-    }
-
-    const pairs = [
+  const pairs = [
       {
         pair: ["rock", "scissors"],
         winner: "rock",
@@ -25,6 +15,15 @@ function playGame() {
         winner: "paper",
       },
     ];
+
+  function playRound() {
+    const humanChoice = getHumanChoice();
+    const computerChoice = getComputerChoice();
+
+    if (humanChoice === computerChoice) {
+      console.log(`It's a tie! ${humanChoice} VS ${computerChoice}`);
+      return;
+    }
 
     const match = pairs.find((item) => {
       return (
