@@ -68,11 +68,10 @@ function playGame() {
     }
   }
 
-  playRound();
-  playRound();
-  playRound();
-  playRound();
-  playRound();
+  for (let i = 0; i < 5; i++) {
+    playRound();
+  }
+
   const result = defineWinner(humanScore, computerScore);
 
   alert(result);
