@@ -2,19 +2,19 @@ function playGame() {
   let humanScore = 0;
   let computerScore = 0;
   const pairs = [
-      {
-        pair: ["rock", "scissors"],
-        winner: "rock",
-      },
-      {
-        pair: ["scissors", "paper"],
-        winner: "scissors",
-      },
-      {
-        pair: ["paper", "rock"],
-        winner: "paper",
-      },
-    ];
+    {
+      pair: ["rock", "scissors"],
+      winner: "rock",
+    },
+    {
+      pair: ["scissors", "paper"],
+      winner: "scissors",
+    },
+    {
+      pair: ["paper", "rock"],
+      winner: "paper",
+    },
+  ];
 
   function playRound() {
     const humanChoice = getHumanChoice();
@@ -67,9 +67,9 @@ function playGame() {
     }
   }
 
-  for (let i = 0; i < 5; i++) {
-    playRound();
-  }
+  // for (let i = 0; i < 5; i++) {
+  //   playRound();
+  // }
 
   const result = defineWinner(humanScore, computerScore);
 
@@ -78,3 +78,9 @@ function playGame() {
 }
 
 playGame();
+
+const outcomes = {
+  win: "🎉 You win!",
+  draw: "🤝 It's a draw",
+  loss: "😔 You lose!",
+};
