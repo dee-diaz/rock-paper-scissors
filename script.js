@@ -1,7 +1,19 @@
 function playGame() {
+  const GAME_CONFIG = {
+    WINNING_SCORE: 5,
+    RESET_DELAY: 2000,
+  };
+
   const choiceButtons = document.querySelectorAll(".user-choices button");
+  const resultEl = document.querySelector(".result");
+  const humanChoiceEl = document.querySelector("#human-choice");
+  const computerChoiceEl = document.querySelector("#computer-choice");
+  const humanScoreEl = document.querySelector(".human-score .number");
+  const computerScoreEl = document.querySelector(".computer-score .number");
+
   let humanScore = 0;
   let computerScore = 0;
+
   const pairs = [
     {
       pair: ["rock", "scissors"],
@@ -29,6 +41,7 @@ function playGame() {
 
   function getHumanChoice(e) {
     const choice =
+      e.currentTarget.dataset.choice ||
       e.currentTarget.className ||
       e.currentTarget.children[1].textContent.toLowerCase();
     return choice;
@@ -42,9 +55,6 @@ function playGame() {
     };
     const humanChoice = getHumanChoice(e);
     const computerChoice = getComputerChoice();
-    const resultEl = document.querySelector(".result");
-    const humanChoiceEl = document.querySelector("#human-choice");
-    const computerChoiceEl = document.querySelector("#computer-choice");
 
     const match = pairs.find((item) => {
       return (
@@ -84,9 +94,6 @@ function playGame() {
     }
 
     function updateScore() {
-      const humanScoreEl = document.querySelector(".human-score .number");
-      const computerScoreEl = document.querySelector(".computer-score .number");
-
       humanScoreEl.textContent = humanScore;
       computerScoreEl.textContent = computerScore;
     }
@@ -110,8 +117,43 @@ function playGame() {
       });
     }
 
+    function resetScore() {
+      humanScore = 0;
+      computerScore = 0;
+      resultEl.innerText = "😈 Let's play?";
+    }
+
+    function defineWinner(humanScore, computerScore) {
+      const overlay = document.querySelector(".overlay");
+      const h3 = document.querySelector(".modal h3");
+      const para = document.querySelector(".modal p");
+      const newGameBtn = document.querySelector(".modal button");
+      overlay.classList.remove("hidden");
+
+      if (humanScore > computerScore) {
+        h3.innerText = "🎉 You won the game! 🎉";
+        para.innerText = `Your score: ${humanScore}\n Computer's score: ${computerScore}`;
+      } else {
+        h3.innerText = "😔 You lost the game 😔";
+        para.innerText = `Your score: ${humanScore}\n Computer's score: ${computerScore}`;
+      }
+
+      newGameBtn.addEventListener("click", () => {
+        overlay.classList.add("hidden");
+        h3.innerText = "";
+        para.innerText = "";
+        resetScore();
+        updateScore();
+      });
+    }
+
     updateScore();
-    setTimeout(resetRoundResults, 2500);
+
+    if (humanScore === GAME_CONFIG.WINNING_SCORE || computerScore === GAME_CONFIG.WINNING_SCORE) {
+      defineWinner(humanScore, computerScore);
+    }
+
+    setTimeout(resetRoundResults, GAME_CONFIG.RESET_DELAY);
   }
 }
 

@@ -13,6 +13,13 @@
     <title>Document</title>
   </head>
   <body>
+    <div class="overlay hidden">
+      <div class="modal">
+        <h3></h3>
+        <p></p>
+        <button>Play again</button>
+      </div>
+    </div>
     <main>
       <div class="container">
         <h1>Rock Paper Scissors</h1>
@@ -46,15 +53,15 @@
           <p>Rock beats Scissors • Paper beats Rock • Scissors beats Paper</p>
         </div>
         <div class="user-choices">
-          <button class="rock">
+          <button class="rock" data-choice="rock">
             <span>✊</span>
             <p>Rock</p>
           </button>
-          <button class="paper">
+          <button class="paper" data-choice="paper">
             <span>✋</span>
             <p>Paper</p>
           </button>
-          <button class="scissors">
+          <button class="scissors" data-choice="scissors">
             <span>✌️</span>
             <p>Scissors</p>
           </button>
