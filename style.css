@@ -144,17 +144,17 @@ main {
 }
 
 .win {
-  border: 3px solid #1BB152;
+  border: 1px solid #1BB152;
   background-color: #1BB15233;
 }
 
 .tie {
-  border: 3px solid #facc15;
+  border: 1px solid #facc15;
   background-color: #facc1533;
 }
 
 .loss {
-  border: 3px solid #FF3333;
+  border: 1px solid #FF3333;
   background-color: #FF333333;
 }
 
@@ -184,22 +184,16 @@ main {
   font-weight: 500;
 }
 
-.wins {
+.human-score {
   background-color: #22c55e33;
   border: 1px solid #22c55e4d;
   color: #4ade80;
 }
 
-.draws {
+.computer-score {
   background-color: #eab30833;
   border: 1px solid #eab3084d;
   color: #facc15;
-}
-
-.losses {
-  background-color: #ef444433;
-  border: 1px solid #ef44444d;
-  color: #ff3333;
 }
 
 .rules {

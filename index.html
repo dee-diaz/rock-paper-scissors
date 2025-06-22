@@ -1,73 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="./style.css" />
-  <title>Document</title>
-</head>
-
-<body>
-  <main>
-    <div class="container">
-      <h1>Rock Paper Scissors</h1>
-      <p>Choose your weapon and battle the computer!</p>
-      <div class="score">
-        <h2>Score</h2>
-        <div class="stats">
-          <div class="wins">
-            <span class="number">0</span>
-            <p>Wins</p>
-          </div>
-          <div class="draws">
-            <span class="number">0</span>
-            <p>Draws</p>
-          </div>
-          <div class="losses">
-            <span class="number">0</span>
-            <p>Losses</p>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Sora:wght@100..800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <h1>Rock Paper Scissors</h1>
+        <div class="score">
+          <h2>Game Score</h2>
+          <div class="stats">
+            <div class="human-score">
+              <span class="number">0</span>
+              <p>You</p>
+            </div>
+            <div class="computer-score">
+              <span class="number">0</span>
+              <p>Computer</p>
+            </div>
           </div>
         </div>
-      </div>
-      <div class="result">
-        😈 Let's play?
-      </div>
-      <div class="round">
-        <div>
-          <p>You</p>
-          <div id="human-choice">?</div>
+        <div class="result">😈 Let's play?</div>
+        <div class="round">
+          <div>
+            <p>You</p>
+            <div id="human-choice">?</div>
+          </div>
+          <span>VS</span>
+          <div>
+            <p>Computer</p>
+            <div id="computer-choice">?</div>
+          </div>
         </div>
-        <span>VS</span>
-        <div>
-          <p>Computer</p>
-          <div id="computer-choice">?</div>
+        <div class="rules">
+          <p>Make your choice to start playing</p>
+          <p>Rock beats Scissors • Paper beats Rock • Scissors beats Paper</p>
+        </div>
+        <div class="user-choices">
+          <button class="rock">
+            <span>✊</span>
+            <p>Rock</p>
+          </button>
+          <button class="paper">
+            <span>✋</span>
+            <p>Paper</p>
+          </button>
+          <button class="scissors">
+            <span>✌️</span>
+            <p>Scissors</p>
+          </button>
         </div>
       </div>
-      <div class="rules">
-        <p>Make your choice to start playing</p>
-        <p>Rock beats Scissors • Paper beats Rock • Scissors beats Paper</p>
-      </div>
-      <div class="user-choices">
-        <button class="rock">
-          <span>✊</span>
-          <p>Rock</p>
-        </button>
-        <button class="paper">
-          <span>✋</span>
-          <p>Paper</p>
-        </button>
-        <button class="scissors">
-          <span>✌️</span>
-          <p>Scissors</p>
-        </button>
-      </div>
-    </div>
-  </main>
-  <script src="script.js"></script>
-</body>
-
+    </main>
+    <script src="script.js"></script>
+  </body>
 </html>
