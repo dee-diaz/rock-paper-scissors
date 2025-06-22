@@ -104,7 +104,7 @@ h1 + p {
 }
 
 main {
-  padding-top: 72px;
+  padding-block: 72px;
 }
 
 .container {
@@ -148,7 +148,7 @@ main {
   background-color: #1BB15233;
 }
 
-.draw {
+.tie {
   border: 3px solid #facc15;
   background-color: #facc1533;
 }
@@ -252,7 +252,7 @@ main {
   align-items: center;
   background-color: #37415180;
   color: var(--text-secondary);
-  font-size: 40px;
+  font-size: 20px;
   border-radius: 9999px;
   height: 8rem;
   width: 8rem;
