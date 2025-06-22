@@ -66,6 +66,7 @@ function playGame() {
       humanChoiceEl.textContent = humanChoice;
       computerChoiceEl.textContent = computerChoice;
       resultEl.textContent = result;
+      toggleButtonsInteractivity();
 
       switch (result) {
         case "🤝 It's a tie":
@@ -96,10 +97,20 @@ function playGame() {
 
       humanChoiceEl.innerText = "?";
       computerChoiceEl.innerText = "?";
+      toggleButtonsInteractivity();
+    }
+
+    function toggleButtonsInteractivity() {
+      choiceButtons.forEach((button) => {
+        if (button.disabled) {
+          button.disabled = false;
+        } else {
+          button.disabled = true;
+        }
+      });
     }
 
     updateScore();
-
     setTimeout(resetRoundResults, 2500);
   }
 }
